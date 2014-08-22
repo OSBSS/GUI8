@@ -10,7 +10,7 @@ int launchHour = hour();
 int launchMin = minute();
 int launchPortIndex = 1;
 int secMinHourIndex = 0;
-String logFileName = "log";
+String logFileName = "FileName";
 String secMinHour[] = {"sec","min","hour"};
 
 //Gui working variables
@@ -202,7 +202,14 @@ public void draw(){
     text(launchMin, 280, 159);
     text("(minute to launch)", 310, 159);
     text("(selected serial port)", 310, 245);
-    if(logFileName.charAt(0) >= 48 && logFileName.charAt(0) <=57){
+    print(logFileName.length());
+    if((logFileName.indexOf(32)) != -1 && (logFileName.length() != 1)){
+        fill(255,0,0);
+        textFieldMessage = "Filename cannot contain spaces.";
+        errorFlag = true;
+      }
+    
+    else if(logFileName.charAt(0) >= 48 && logFileName.charAt(0) <=57){
       fill(255,0,0);
       textFieldMessage = "Filename cannot start with an integer.";
       errorFlag = true;
@@ -215,7 +222,7 @@ public void draw(){
     }
     else {
       errorFlag = false;
-      textFieldMessage = ".csv    Enter file name, limited to 7 characters";
+      textFieldMessage = ".csv    Enter file name, limited to 8 characters";
     }
     text(textFieldMessage, 105, 200);
     
