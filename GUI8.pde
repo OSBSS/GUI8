@@ -202,7 +202,7 @@ public void draw(){
     text(launchMin, 280, 159);
     text("(minute to launch)", 310, 159);
     text("(selected serial port)", 310, 245);
-    print(logFileName.length());
+    //print(logFileName.length());
     if((logFileName.indexOf(32)) != -1 && (logFileName.length() != 1)){
         fill(255,0,0);
         textFieldMessage = "Filename cannot contain spaces.";
