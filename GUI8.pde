@@ -108,7 +108,7 @@ void serialEvent(Serial myPort){ //handler for all serial communication with mic
      incoming = incoming.substring(0, incoming.length() -1);
      String[] list = split(incoming, ',');
      messageLn2 ="Launch Day: " + list[0] + " Launch Hour: " + list[1] + " Launch Minute: " + list[2];
-     delay(2014);
+     delay(1000);
      dotDotFlag = false;
      doneFlag = true;
      messageLn1 = "Done. Please close this window.";
